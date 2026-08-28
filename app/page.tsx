@@ -56,6 +56,7 @@ export default function Home() {
             Documentation
           </a>
         </div>
+        <div className="text-4xl font-bold leading-10">I&apos;m new</div>
       </main>
     </div>
   );

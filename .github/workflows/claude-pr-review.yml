@@ -1,0 +1,45 @@
+name: Claude PR Review
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+    branches: [master]
+
+permissions:
+  contents: read
+  pull-requests: write
+
+jobs:
+  claude-review:
+    if: github.event.pull_request.draft == false
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          fetch-depth: 0
+
+      - name: Run Claude Code Review
+        uses: anthropics/claude-code-action@main
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          prompt: |
+            Review this pull request's diff against its base branch.
+
+            Follow the checklist in .claude/skills/pr-review/SKILL.md: scope/size,
+            correctness (trace non-trivial logic by hand, check edge cases), test
+            coverage, security (injection, secrets, auth), simplicity/reuse
+            (flag speculative abstractions and duplication), repo conventions,
+            and commit/PR hygiene.
+
+            This repo pins a version of Next.js with breaking changes vs. common
+            training data (see AGENTS.md) — for anything touching Next.js APIs,
+            verify against node_modules/next/dist/docs/ before flagging it.
+
+            Post findings as inline PR review comments, most severe first, each
+            with a concrete failure scenario. If nothing rises above nitpick
+            level, leave a short summary comment saying so instead of forcing
+            findings.
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
