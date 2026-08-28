@@ -56,9 +56,7 @@ export default function Home() {
             Documentation
           </a>
         </div>
-        <div className="mt-16 flex w-full max-w-3xl items-center justify-center gap-6 sm:justify-start">
-          I'm new
-        </div>
+        <div className="text-4xl font-bold leading-10">I&apos;m new</div>
       </main>
     </div>
   );
