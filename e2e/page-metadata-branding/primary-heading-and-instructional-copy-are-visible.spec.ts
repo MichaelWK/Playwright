@@ -8,7 +8,7 @@ test.describe("Page Metadata & Branding", () => {
     page,
   }) => {
     // 1. Navigate to /
-    await page.goto("https://playwright-eight.vercel.app/");
+    await page.goto("http://localhost:3000/");
 
     // 2. Locate the heading containing "Create Next App"
     await expect(

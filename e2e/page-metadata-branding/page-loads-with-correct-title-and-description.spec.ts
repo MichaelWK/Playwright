@@ -6,7 +6,7 @@ import { test, expect } from "@playwright/test";
 test.describe("Page Metadata & Branding", () => {
   test("Page loads with correct title and description", async ({ page }) => {
     // 1. Navigate to /
-    await page.goto("https://playwright-eight.vercel.app/");
+    await page.goto("http://localhost:3000/");
 
     // 2. Read the document title
     await expect(page).toHaveTitle(/Create Next App/);

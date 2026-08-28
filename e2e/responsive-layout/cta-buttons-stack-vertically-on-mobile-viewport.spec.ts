@@ -9,7 +9,7 @@ test.describe("Responsive Layout", () => {
     await page.setViewportSize({ width: 375, height: 667 });
 
     // 2. Navigate to /
-    await page.goto("https://playwright-eight.vercel.app/");
+    await page.goto("http://localhost:3000/");
 
     // 3. Compare the bounding boxes of the "Deploy Now" and "Documentation" links
     const deployNowBox = await page

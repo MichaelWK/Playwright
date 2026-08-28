@@ -8,7 +8,7 @@ test.describe("External Navigation Links", () => {
     page,
   }) => {
     // 1. Navigate to /
-    await page.goto("https://playwright-eight.vercel.app/");
+    await page.goto("http://localhost:3000/");
 
     // 2. Locate the inline "Templates" link within the descriptive paragraph
     // 3. Verify its href attribute (do not need to fully navigate away since it opens in the same tab)

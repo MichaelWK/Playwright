@@ -7,7 +7,7 @@ test.describe("Static Assets & Accessibility", () => {
   test("Favicon is served", async ({ page }) => {
     // 1. Request /favicon.ico directly (or check the <link rel="icon"> response)
     const response = await page.request.get(
-      "https://playwright-eight.vercel.app/favicon.ico",
+      "http://localhost:3000/favicon.ico",
     );
 
     expect(response.status()).toBe(200);

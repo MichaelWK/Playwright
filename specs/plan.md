@@ -1,6 +1,6 @@
 # Test Plan: Landing Page (create-next-app scaffold)
 
-**Application under test:** https://playwright-eight.vercel.app/
+**Application under test:** http://localhost:3000/
 **State at time of planning:** Unmodified `create-next-app` starter — single route (`/`), no forms, auth, or backend. This plan covers the current UI surface; extend it once real product features land.
 **Note on method:** Live-browser MCP tools (`playwright-test/*`) were not available in this session, so this plan was derived from reading `app/page.tsx` / `app/layout.tsx` directly rather than an interactive browser exploration. Steps should be spot-checked against a live snapshot before the generator agent implements them.
 

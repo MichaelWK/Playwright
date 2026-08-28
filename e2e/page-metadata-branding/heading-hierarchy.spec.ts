@@ -6,7 +6,7 @@ import { test, expect } from "@playwright/test";
 test.describe("Page Metadata & Branding", () => {
   test("(Negative/edge) Heading hierarchy", async ({ page }) => {
     // 1. Navigate to /
-    await page.goto("https://playwright-eight.vercel.app/");
+    await page.goto("http://localhost:3000/");
 
     // 2. Query all <h1> elements on the page
     // Known issue: the page currently renders two <h1> elements instead of one.

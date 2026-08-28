@@ -9,7 +9,7 @@ test.describe("External Navigation Links", () => {
     context,
   }) => {
     // 1. Navigate to /
-    await page.goto("https://playwright-eight.vercel.app/");
+    await page.goto("http://localhost:3000/");
 
     // 2. Click the link named "Deploy Now" (contains the Vercel logomark image)
     // 3. Wait for the popup/new tab to open
@@ -20,6 +20,6 @@ test.describe("External Navigation Links", () => {
     const popup = await popupPromise;
 
     await expect(popup).toHaveURL(/^https:\/\/vercel\.com\/new/);
-    await expect(page).toHaveURL("https://playwright-eight.vercel.app/");
+    await expect(page).toHaveURL("http://localhost:3000/");
   });
 });

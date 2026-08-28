@@ -9,7 +9,7 @@ test.describe("Appearance / Theming", () => {
     await page.emulateMedia({ colorScheme: "light" });
 
     // 2. Navigate to /
-    await page.goto("https://playwright-eight.vercel.app/");
+    await page.goto("http://localhost:3000/");
 
     // 3. Read the computed background color of the page body/main
     const themedContainer = page.locator(".bg-zinc-50");

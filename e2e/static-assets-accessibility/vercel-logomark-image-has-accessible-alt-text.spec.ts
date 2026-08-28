@@ -10,7 +10,7 @@ test.describe("Static Assets & Accessibility", () => {
       page.waitForResponse((response) =>
         response.url().endsWith("/vercel.svg"),
       ),
-      page.goto("https://playwright-eight.vercel.app/"),
+      page.goto("http://localhost:3000/"),
     ]);
 
     // 2. Locate the image inside the "Deploy Now" link
